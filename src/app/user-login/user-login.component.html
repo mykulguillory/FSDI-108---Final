@@ -1,0 +1,41 @@
+<!-- Default form login -->
+<form class="text-center border border-light p-5" action="#!">
+
+        <p class="h4 mb-4">Sign in</p>
+        <div *ngIf="loginFailed" class="alert alert-danger">
+                Login Failed
+            </div>
+    
+        <!-- User Name -->
+        <input type="text" [(ngModel)]="userName" name="userName" (ngModelChange)="userChanged()" class="form-control mb-4" placeholder="User Name">
+        <div *ngIf="userNameError" class="alert alert-danger">
+                User Name Must Be Entered
+            </div>
+    
+        <!-- Password -->
+        <input type="password" [(ngModel)]="password" name="password" (ngModelChange)="passwordChanged()"class="form-control mb-4" placeholder="Password">
+        
+        <div *ngIf="passwordError" class="alert alert-danger">
+                Password Must Be Entered
+            </div>
+        <div class="d-flex justify-content-around">
+            <div>
+                <!-- Remember me -->
+                <div class="custom-control custom-checkbox">
+                    <input type="checkbox" class="custom-control-input" id="defaultLoginFormRemember">
+                    <label class="custom-control-label" for="defaultLoginFormRemember">Remember me</label>
+                </div>
+            </div>
+            <div>
+                <!-- Forgot password -->
+                <a href="">Forgot password?</a>
+            </div>
+        </div>
+    
+        <!-- Sign in button -->
+        <button (click)="login()" class="btn btn-info btn-block my-4" type="submit">Sign in</button>
+    
+
+    
+    </form>
+    <!-- Default form login -->
